@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import com.fazecast.jSerialComm.SerialPort;
 
 public class Core {
+	// define Serial port
 	private SerialPort serialPort;
 	private int BaudRate;
 
@@ -21,7 +22,7 @@ public class Core {
 		this.BaudRate = BaudRate;
 		setPort(inputPort);
 	}
-
+	// send via serial port method
 	public void send(Object input) throws InterruptedException {
 		if (serialPort.openPort()) {
 			PrintWriter pw = new PrintWriter(serialPort.getOutputStream());
@@ -32,7 +33,7 @@ public class Core {
 		}
 
 	}
-
+	// receive via serial port method
 	public String receive() throws IOException, InterruptedException {
 		String output = null;
 		if (serialPort.openPort()) {
@@ -43,7 +44,7 @@ public class Core {
 		}
 		return output;
 	}
-
+	// get available port to connect as a string array
 	public String[] getPorts() {
 		int length = SerialPort.getCommPorts().length;
 		String[] outputs = new String[length];
@@ -54,11 +55,11 @@ public class Core {
 		}
 		return outputs;
 	}
-
+	// check if the port is open or not
 	public boolean getPortStatus() {
 		return serialPort.isOpen();
 	}
-
+	// port setup
 	public void setPort(int input) throws InterruptedException {
 		serialPort = SerialPort.getCommPort(SerialPort.getCommPorts()[input].getSystemPortName());
 		serialPort.setComPortParameters(BaudRate, 8, 1, 0);
