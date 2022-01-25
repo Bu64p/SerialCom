@@ -42,8 +42,29 @@ Core Hardwear = new Core(9600,port_number);
 
 # Methods:
 | Command | Description |
-| --- | --- |
-| 'Core(int BaudRate) : void' | define the serial port with BaudRate |
-| 'Core(int BaudRate, int Port) : void' | define the serial port with BaudRate and Port |
-| 'setPort(int Port) : void' | Set or change the port |
-| 'setPort(int Port) : void' | Set or change the port |
+| ---------- | --------- |
+| `Core(int BaudRate) : void` | define the serial port with BaudRate |
+| `Core(int BaudRate, int Port) : void` | define the serial port with BaudRate and Port |
+| `setPort(int Port) : void` | set or change the port |
+| `getPorts() : string array` | return available ports as a string array |
+| `getPortStatus() : boolean` | check if the port is open or not and return result as boolean , ```true``` for open state & ```false``` for close state|
+| `send(Object input) : void` | first open the port and then send the input to port |
+| `receive() : string` | read the serial and return result as string |
+
+> Recommended: use send() and receive() in thread
+
+# example:
+
+[java2arduino_LedPot](https://github.com/Bu64p/java2arduino_LedPot)
+
+    
+    
+#
+ compiled in Java16.   
+ also you can compile this [file](https://github.com/Bu64p/SerialCom/blob/main/SerialCom/src/SerialCom/Core.java) in any jdk but be careful about the [jSerialComm-2.7.0.jar](https://github.com/Bu64p/SerialCom/blob/main/Jar/jSerialComm-2.7.0.jar)'s version.
+
+
+#
+<b><i>Code and Design By Eng.Parsa Gh (Bu64p)</b></i>
+
+
