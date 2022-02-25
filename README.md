@@ -10,7 +10,7 @@ A serial communication simplifier program.
 
 # How to use?
 1. import:  
- import these two file [SerialComCore.jar](https://github.com/Bu64p/SerialCom/blob/main/Jar/SerialComCore.jar) (*simplifier*) and [jSerialComm-2.7.0.jar](https://github.com/Bu64p/SerialCom/blob/main/Jar/jSerialComm-2.7.0.jar) to your project.
+ import these two files [SerialComCore.jar](https://github.com/Bu64p/SerialCom/blob/main/Jar/SerialComCore.jar) (*simplifier*) and [jSerialComm-2.7.0.jar](https://github.com/Bu64p/SerialCom/blob/main/Jar/jSerialComm-2.7.0.jar) to your project.
 2. import:
  add this code top of the Java program to import the main Core:
  
@@ -29,7 +29,7 @@ Core Hardwear = new Core(9600);
 then you must set the port you want to communicate with:
 
 ```
-Arduino.setPort(port_number);
+Hardwear.setPort(port_number);
 ```
 
 > (9600 is Baud Rate that depends on your hardwear that you want to communicate.)
